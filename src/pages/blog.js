@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import blogPosts from '../data/blogPosts';
 
 const Blog = () => {
@@ -10,6 +11,9 @@ const Blog = () => {
           <h2 className="text-xl font-bold mb-2">{post.title}</h2>
           <p className="text-gray-500 mb-2">{post.date}</p>
           <p>{post.content}</p>
+          <Link href={`/blog/${post.id}`}
+            <a className="text-blue-500 hover:text-blue-800">Read more</a>
+          </Link>
         </div>
       ))}
     </div>
